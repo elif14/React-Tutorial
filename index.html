@@ -8,15 +8,16 @@
     <!--import React Dom - library that puts interactive UI to the body-->
     <script src = "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     <script>
+      <!--In React JS, everything starts with the JS and it becomes html-->
         const root = document.getElementById("root");
         <!--React JS will create HTML for me    createElement takes second argument for id-->
 	<!--Created Span and gave it an id, however span is still empty-->
         const span = React.createElement(
-	    "span",
-            { id: "example span" },
+	    "span", <!-- this can be any tag in html (ie; div, button)-->
+            { id: "example span" }, <!-- property: id, style (ie; style= "color: red;")-->
             "Helloworld, this is a span"
         );
-        <!--ReactDOM will render UI to span inside of root-->
+        <!--ReactDOM will render (translate that JS element into html) UI to span inside of root-->
         ReactDOM.render(span, root);
     </script>
 </html>
