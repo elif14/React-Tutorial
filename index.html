@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <button id = "button"> click me </button>
-    <span>Total clicks: 0</span>
-  </body>
-  <script>
-    let counter = 0;
-    const button = document.getElementById("button");
-    const span = document.querySelector("span");
-    function handleClick() {
-	console.log("I have been clicked", counter);
-	counter = counter += 1;
-	span.innerText = counter;
-	// this below code does not work -> ${counter}
-	//span.innerText = 'Total clicks: ${counter}';
-    }
-    button.addEventListener("click", handleClick);
-  </script>
+    <body>
+        <div id = 'root'></div>
+    </body>
+    <!--import React - library that allows interactive UI-->
+    <script src = "https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <!--import React Dom - library that puts interactive UI to the body-->
+    <script src = "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script>
+        const root = document.getElementById("root");
+        <!--React JS will create HTML for me-->
+        const span = React.createElement("span");
+        <!--ReactDOM will render UI to span inside of root-->
+        ReactDOM.render(span, root);
+    </script>
 </html>
-
-
