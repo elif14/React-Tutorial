@@ -8,16 +8,19 @@
     <!--import React Dom - library that puts interactive UI to the body-->
     <script src = "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     <script>
-      <!--In React JS, everything starts with the JS and it becomes html-->
+      <!--In React JS, everything starts with the JS and it becomes HTML-->
         const root = document.getElementById("root");
         <!--React JS will create HTML for me    createElement takes second argument for id-->
-	<!--Created Span and gave it an id, however span is still empty-->
+	<!--Created Span and gave it an id, BUT span is still empty-->
         const span = React.createElement(
-	    "span", <!-- this can be any tag in html (ie; div, button)-->
+	    "span", <!-- this can be any tag in HTML (ie; div, button)-->
             { id: "example span" }, <!-- property: id, style (ie; style= "color: red;")-->
-            "Helloworld, this is a span"
-        );
-        <!--ReactDOM will render (translate that JS element into html) UI to span inside of root-->
-        ReactDOM.render(span, root);
+            "Please sign in"
+      );
+      <!--This const name doesn't have to be same as HTML tag, BUT argument has to match the name of the HTML tag-->
+      const button = React.createElement("button", null, "Sign in");
+      const container = React.createElement("div", null, [span, button]);
+        <!--ReactDOM will render JS UI element inside of root-->
+        ReactDOM.render(container, root);
     </script>
 </html>
