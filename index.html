@@ -12,15 +12,16 @@
         const root = document.getElementById("root");
         <!--React JS will create HTML for me    createElement takes second argument for id-->
 	<!--Created Span and gave it an id, BUT span is still empty-->
-        const span = React.createElement(
-	    "span", <!-- this can be any tag in HTML (ie; div, button)-->
-            { id: "example span" }, <!-- property: id, style (ie; style= "color: red;")-->
+        const h3 = React.createElement(
+	    "h3", <!-- this can be any tag in HTML (ie; div, button)-->
+        { onMouseEnter: () => console.log('Mouse Entered'),}, <!-- property: id, style (ie; style= "color: red;")-->
             "Please sign in"
       );
       <!--This const name doesn't have to be same as HTML tag, BUT argument has to match the name of the HTML tag-->
-      const button = React.createElement("button", null, "Sign in");
-      const container = React.createElement("div", null, [span, button]);
+        const button = React.createElement("button", {onClick: () => console.log('Clicked'),} , "Sign in");
+      const container = React.createElement("div", null, [h3, button]);
         <!--ReactDOM will render JS UI element inside of root-->
-        ReactDOM.render(container, root);
+    ReactDOM.render(container, root);
+    <!--onClick and onMouseEnter are like eventlistner in html but done in React JS-->
     </script>
 </html>
